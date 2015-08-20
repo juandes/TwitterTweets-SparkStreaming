@@ -1,4 +1,4 @@
-# TwitterTweets-Spark
+# Twitter tweets in real time using Spark Streaming and Scala
 
 ## Overview
 
@@ -9,6 +9,10 @@ This program get real time tweets that contains a given keyword. Made using Spar
 This program requires 5 parameters to be sent via the command line.
 
 `./bin/spark-submit --class KeywordTweets /path/to/KeywordTweets.jar <twitter Consumer Key> <twitter Consumer Secret> <twitter Access Token> <twitter Access Secret> <keyword to search>`
+
+## Project
+
+This repository contains two files: the program (KeywordTweets.scala) and the sbt file needed to compile it (tweets.sbt).
 
 ## Notes
 
