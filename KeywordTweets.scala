@@ -5,9 +5,9 @@ import org.apache.spark.SparkConf
 
 object KeywordTweets {
   def main(args: Array[String]) {
-    if (args.length < 5) {
+    if (args.length < 4) {
       System.err.println("Usage: KeywordTweets <consumer key> <consumer secret> " +
-        "<access token> <access token secret> <keyword>")
+        "<access token> <access token secret> [<filters>]")
       System.exit(1)
     }
 
@@ -26,7 +26,7 @@ object KeywordTweets {
     val stream = TwitterUtils.createStream(ssc, None, filters)
     
     // Filter by the given keyword
-    val tweets = stream.map(status => status.getText).filter(_.contains(args(4)))
+    val tweets = stream.map(status => status.getText)
                  
     tweets.print()
 
